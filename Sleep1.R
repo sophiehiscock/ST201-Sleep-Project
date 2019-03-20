@@ -17,6 +17,9 @@ summary(m.a)
 #all variables except DASScore
 m.b<-lm(CognitionZscore~.-DASScore, data=dat)
 summary(m.b)
+cor(dat$NumEarlyClass,dat$ClassesMissed) #negative correlation?????
+m<-lm(CognitionZscore~ ClassesMissed+NumEarlyClass, data=dat)
+vif(m) #no collinearity
 
 install.packages('car')
 library(car)
@@ -28,6 +31,15 @@ m.c<-lm(CognitionZscore~ Gender+ClassYear+ClassesMissed+AverageSleep+DASScore+Al
 summary(m.c)
 vif(m.c) #no issues of collinearity here, remove confounding variable
 plot(m.c)
+
+#testing for outliers in DASScore
+Das1<-lm(CognitionZscore~ DASScore, data=dat) 
+Das1<-data.frame(Stand.Res=cbind(round(rstandard(lm2),2),Lev=round(hatvalues(lm2),2),Cooks=round(cooks.distance(lm2),2)))
+write.csv(Das1,row.names = FALSE,"DASScore.outliers.csv")
+
+install.packages("arm")
+library(arm)
+display(m.c)
 
 m.d<-lm(CognitionZscore~ DepressionScore+AnxietyScore+StressScore, data=dat)
 vif(m.d)
