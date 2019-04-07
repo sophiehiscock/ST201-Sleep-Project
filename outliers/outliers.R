@@ -56,3 +56,38 @@ write.csv(m10.outliers,row.names = FALSE,"WeekendSleep.outliers.csv")
 m11<-lm(CognitionZscore~ AverageSleep, data=dat) 
 m11.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m11),2),Lev=round(hatvalues(m11),2),Cooks=round(cooks.distance(m11),2)))
 write.csv(m11.outliers,row.names = FALSE,"AverageSleep.outliers.csv")
+
+#DepressionScore
+m12<-lm(CognitionZscore~ DepressionScore, data=dat) 
+m12.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m12),2),Lev=round(hatvalues(m12),2),Cooks=round(cooks.distance(m12),2)))
+write.csv(m12.outliers,row.names = FALSE,"DepressionScore.outliers.csv")
+
+#AnxietyScore
+m13<-lm(CognitionZscore~ AnxietyScore, data=dat) 
+m13.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m13),2),Lev=round(hatvalues(m13),2),Cooks=round(cooks.distance(m13),2)))
+write.csv(m13.outliers,row.names = FALSE,"AnxietyScore.outliers.csv")
+
+#StressScore
+m14<-lm(CognitionZscore~ StressScore, data=dat) 
+m14.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m14),2),Lev=round(hatvalues(m14),2),Cooks=round(cooks.distance(m14),2)))
+write.csv(m14.outliers,row.names = FALSE,"StressScore.outliers.csv")
+
+#WeekdayBed
+m15<-lm(CognitionZscore~ WeekdayBed, data=dat) 
+m15.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m15),2),Lev=round(hatvalues(m15),2),Cooks=round(cooks.distance(m15),2)))
+write.csv(m15.outliers,row.names = FALSE,"WeekdayBed.outliers.csv")
+
+#WeekdayRise
+m16<-lm(CognitionZscore~ WeekdayRise, data=dat) 
+m16.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m16),2),Lev=round(hatvalues(m16),2),Cooks=round(cooks.distance(m16),2)))
+write.csv(m16.outliers,row.names = FALSE,"WeekdayRise.outliers.csv")
+
+#WeekendBed
+m17<-lm(CognitionZscore~ WeekendBed, data=dat) 
+m17.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m17),2),Lev=round(hatvalues(m17),2),Cooks=round(cooks.distance(m17),2)))
+write.csv(m17.outliers,row.names = FALSE,"WeekendBed.outliers.csv")
+
+#WeekendRise
+m18<-lm(CognitionZscore~ WeekendRise, data=dat) 
+m18.outliers<-data.frame(Stand.Res=cbind(round(rstandard(m18),2),Lev=round(hatvalues(m18),2),Cooks=round(cooks.distance(m18),2)))
+write.csv(m18.outliers,row.names = FALSE,"WeekendRise.outliers.csv")

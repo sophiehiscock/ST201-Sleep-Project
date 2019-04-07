@@ -25,6 +25,7 @@ library(leaps)
 leaps<-regsubsets(CognitionZscore ~.-DASScore,data = dat)
 plot(leaps,scale="adjr2")
 #suggests WeekdayRise DepressionStatusSevere StressScore ClassesMissed GPA EarlyClass NumEarlyClass Gender
+
 msubsets<-lm(CognitionZscore~ WeekdayRise +factor(DepressionStatus)+StressScore+ClassesMissed+GPA+EarlyClass+NumEarlyClass+Gender, data=dat)
 summary(msubsets) #looks good based on R squared value
 
