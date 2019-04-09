@@ -84,3 +84,6 @@ plot(m.d)
 #Test goodness of fit for LOGISTIC using: significance of coefficients, -2 log lieklihood/ deviance, classification table
 #test for linear: R sq adj R sq, F stat, adj SE, coeff fit, residual plot
 
+#corr tests
+cor(dat$Gender,dat$CognitionZscore)
+cor(dat$NumEarlyClass,dat$CognitionZscore)

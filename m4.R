@@ -33,6 +33,10 @@ anova(full3,m4)
 full4<-lm(CognitionZscore~AverageSleep+ClassYear+NumEarlyClass+StressScore+ClassesMissed+EarlyClass*ClassesMissed+GPA+EarlyClass+Gender,  data=dat)
 anova(full4,m4)
 
+#PoorSleepQuality*ClassesMissed not significant
+full5<-lm(CognitionZscore~PoorSleepQuality*ClassesMissed+AverageSleep+ClassYear+NumEarlyClass+StressScore+ClassesMissed+EarlyClass*ClassesMissed+GPA+EarlyClass+Gender,  data=dat)
+anova(full5,m4)
+
 #testing assumptions on m3______________________________________________________
 
 #LINEARITY?
