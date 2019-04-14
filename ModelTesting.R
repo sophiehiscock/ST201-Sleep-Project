@@ -1,5 +1,5 @@
 #dat<-read.csv("sleepedit.csv",header=T) #pre-edited data, without aliased coefficients
-dat<-read.csv("sleep2.csv", header=T) #missing first 10 rows so we can test with this later
+dat<-read.csv("sleepcut.csv", header=T) #missing first 10 rows so we can test with this later
 head(dat)
 
 

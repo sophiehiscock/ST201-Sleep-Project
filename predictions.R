@@ -18,6 +18,7 @@ d<-data.frame(prediction=test$CognitionZscore,actual=dat$CognitionZscore)
 cor.test(d$prediction,d$actual)
 
 rand <- sample(1:254, 20, replace = FALSE)
+print(rand)
 test <- dat[rand, ]
 a <- predict(m4,newdata=test,interval='confidence')
 cor(test$CognitionZscore, a)
