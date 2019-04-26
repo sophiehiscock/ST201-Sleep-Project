@@ -68,7 +68,7 @@ plot(m4.stdres)
 #correlation matrix, >|0.8|?
 dtf <- subset(dat, select = c(StressScore,ClassesMissed,GPA,EarlyClass,NumEarlyClass,Gender))
 cor(dtf[sapply(dtf, is.numeric)])
-cor(dat$NumEarlyClass,dat$EarlyClass) #0.8089492
+cor(dat$NumEarlyClass,dat$EarlyClass) #0.7433919
 #scatterplot matrix
 pairs(dtf[sapply(dtf, is.numeric)])
 #VIF, >10? serious problem

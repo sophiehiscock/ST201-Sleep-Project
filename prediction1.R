@@ -15,8 +15,9 @@ summary(m1)
 #this shows how well the model (trained on the cut dataset) predicts the values of the unused rows_____
 
 #m4
-b<-predict(m4,newdata=dat2,interval='confidence')
+b<-predict(m4,newdata=dat2)
 cor(dat2$CognitionZscore, b) #0.6320178
+sum(abs((dat2$CognitionZscore^2)-b^2))
 
 #m1
 c<-predict(m1,newdata=dat2,interval='confidence')
